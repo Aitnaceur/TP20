@@ -1,0 +1,23 @@
+package com.example.client_service.entities;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity  // Marque cette classe comme une entité JPA
+@Data    // Génère getters, setters, toString, equals, hashCode
+@NoArgsConstructor  // Génère un constructeur sans arguments
+@AllArgsConstructor // Génère un constructeur avec tous les arguments
+public class Client {
+
+    @Id  // Marque ce champ comme clé primaire
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  // Auto-incrémentation
+    private Long id;
+
+    @Column(name = "nom")
+    private String name;
+    private Float age;   // Âge du client
+
+    // Lombok génère automatiquement les getters, setters, constructeurs, etc.
+}
